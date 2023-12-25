@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.frc-start {
+  @apply flex flex-row items-center justify-start;
+}
+
+.frc-center {
+  @apply flex flex-row items-center justify-center;
+}
+
+.frc-between {
+  @apply flex flex-row items-center justify-between;
+}
+
+.frc-end {
+  @apply flex flex-row items-center justify-end;
+}
+
+.fcc-center {
+  @apply flex flex-col items-center justify-center;
+}
+
+.fcc-start {
+  @apply flex flex-col items-center justify-start;
+}
+
+.fcs-start {
+  @apply flex flex-col items-start justify-start;
+}
+
+.line-wrap {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  word-break: break-all;
+}
+
+.one-line-wrap {
+  -webkit-line-clamp: 1;
+}
+
+.two-line-wrap {
+  -webkit-line-clamp: 2;
+}
+
+.three-line-wrap {
+  -webkit-line-clamp: 3;
+}
+
+html,
+body {
+  font-family: Misans, sans-serif;
+  letter-spacing: 0.02em;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+}

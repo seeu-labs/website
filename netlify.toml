@@ -1,0 +1,28 @@
+[build.environment]
+  NODE_OPTIONS = "--max_old_space_size=4096"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[[headers]]
+  for = "/*.html"
+    [headers.values]
+    Content-Type = "text/html"  
+
+[[headers]]
+  for = "/*.css"
+    [headers.values]
+    Content-Type = "text/css"   
+
+[[headers]]
+  for = "/*.js"
+    [headers.values]
+    Content-Type = "text/javascript"  
+
+[[headers]]
+  for = "/*"
+    [headers.values]
+    Strict-Transport-Security = "max-age=63072000; includeSubDomains; preload"
+    X-Frame-Options = "DENY"
