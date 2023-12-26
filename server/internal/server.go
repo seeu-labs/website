@@ -3,7 +3,7 @@ package internal
 import (
 	"github.com/gin-gonic/gin"
 	"github.com/joho/godotenv"
-	"github.com/seeu-labs/website/server/internal/okx"
+	"github.com/seeu-labs/website/server/internal/dashboard"
 	"log"
 	"net/http"
 	"runtime/debug"
@@ -24,7 +24,7 @@ func createServer() *gin.Engine {
 	r.Use(errorHandlerFunc())
 
 	// configure routes
-	okx.Configure(r)
+	dashboard.Configure(r)
 
 	return r
 }

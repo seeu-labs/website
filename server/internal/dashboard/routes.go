@@ -1,4 +1,4 @@
-package brc20
+package dashboard
 
 import (
 	"github.com/gin-gonic/gin"

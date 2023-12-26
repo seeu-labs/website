@@ -1,11 +1,11 @@
-package brc20
+package dashboard
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/seeu-labs/website/server/pkg/okx"
+	"github.com/seeu-labs/website/server/pkg/oklink"
 )
 
-var mc *okx.MktplaceClient
+var mc *oklink.Client
 
 func Configure(g *gin.Engine) {
 	mc = createClient()

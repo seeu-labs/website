@@ -1,4 +1,4 @@
-package okx
+package oklink
 
 import "net/http"
 
@@ -28,7 +28,7 @@ type Brc20TokenDetail struct {
 }
 
 // GetBrc20TokenDetail get brc20 token detail
-func (c *MktplaceClient) GetBrc20TokenDetail(token string) (*Brc20TokenDetail, error) {
+func (c *Client) GetBrc20TokenDetail(token string) (*Brc20TokenDetail, error) {
 	url := "/api/v5/explorer/brc20/token-details?token=" + token
 	req, err := c.CreateRequest(url, http.MethodGet, nil)
 	if err != nil {
