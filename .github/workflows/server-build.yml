@@ -1,0 +1,30 @@
+name: Server-Build
+on:
+  push:
+    paths:
+      - "server/**"
+      - ".github/workflows/server-deploy-main.yml"
+      - ".github/workflows/server-build.yml"
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup Golang with cache
+        uses: magnetikonline/action-golang-cache@v4
+        with:
+          go-version-file: ./server/go.mod
+
+      - name: Run golang build
+        env:
+          GO111MODULE: on
+          GIN_MODE: release
+          CGO_ENABLED: 0
+          GOSUMDB: "off"
+          GOARCH: amd64
+        run: |
+          go build -o app .
+          mkdir dist && cp app dist
+        working-directory: server

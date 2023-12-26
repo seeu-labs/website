@@ -26,7 +26,6 @@ jobs:
           GOSUMDB: "off"
           GOARCH: amd64
         run: |
-          echo "machine github.com login ${{ secrets.GH_USERNAME }} password ${{ secrets.GH_TOKEN }}" > ~/.netrc
           go build -o app .
           mkdir dist && cp app dist
         working-directory: server
