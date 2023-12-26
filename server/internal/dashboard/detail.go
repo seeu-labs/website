@@ -4,17 +4,17 @@ import (
 	"context"
 	"github.com/gin-gonic/gin"
 	"github.com/seeu-labs/website/server/pkg/cache"
-	"github.com/seeu-labs/website/server/pkg/oklink"
+	"github.com/seeu-labs/website/server/pkg/okx-waas"
 	"net/http"
 	"time"
 )
 
 var _cache = cache.NewObjectCache(1 * time.Minute)
 
-func createClient() *oklink.Client {
-	conf := oklink.ClientConfig{}
+func createClient() *okx_waas.Client {
+	conf := okx_waas.ClientConfig{}
 	conf.BindEnv()
-	c, err := oklink.NewMktplaceClient(conf)
+	c, err := okx_waas.NewMktplaceClient(conf)
 	if err != nil {
 		panic(err)
 	}
@@ -22,8 +22,8 @@ func createClient() *oklink.Client {
 }
 
 type SeeuDetail struct {
-	*oklink.Brc20TokenDetail `json:"detail"`
-	*oklink.OrdinalsInfo     `json:"marketplace"`
+	*okx_waas.Brc20TokenDetail `json:"detail"`
+	*okx_waas.OrdinalsInfo     `json:"marketplace"`
 }
 
 func handleSeeuDetail(ctx *gin.Context) {
@@ -34,8 +34,8 @@ func handleSeeuDetail(ctx *gin.Context) {
 	ctx.JSON(http.StatusOK, data)
 }
 
-func getOrdinalsInfo(ctx context.Context) *oklink.OrdinalsInfo {
-	var info oklink.OrdinalsInfo
+func getOrdinalsInfo(ctx context.Context) *okx_waas.OrdinalsInfo {
+	var info okx_waas.OrdinalsInfo
 	k := "ordinals:" + "seeu"
 	if _cache.GetFromCache(k, &info) {
 		return &info
@@ -48,8 +48,8 @@ func getOrdinalsInfo(ctx context.Context) *oklink.OrdinalsInfo {
 	return oc.Data[0]
 }
 
-func getDetail(ctx context.Context) *oklink.Brc20TokenDetail {
-	var detail oklink.Brc20TokenDetail
+func getDetail(ctx context.Context) *okx_waas.Brc20TokenDetail {
+	var detail okx_waas.Brc20TokenDetail
 	k := "brc20-detail:" + "seeu"
 	if _cache.GetFromCache(k, &detail) {
 		return &detail
