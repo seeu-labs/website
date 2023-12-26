@@ -36,7 +36,7 @@ export function Dashbooard() {
       <div className="min-w-[200px] rounded-xl p-4 shadow-md">
         <div className="flex items-center justify-center text-3xl font-bold">
           {(Number.parseFloat(data.marketplace.floorPrice) * 100000000).toFixed(
-            2
+            4
           ) + ' sats'}
         </div>
         <div className="mt-1 text-center text-lg text-gray-600">
