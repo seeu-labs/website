@@ -1,4 +1,4 @@
-package oklink
+package okx_waas
 
 import (
 	"crypto/hmac"
