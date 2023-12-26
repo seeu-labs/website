@@ -4,6 +4,7 @@ on:
     branches: [ main ]
     paths:
       - 'server/**'
+      - '.github/workflows/server-deploy-main.yml'
 
 jobs:
   build:
@@ -15,7 +16,7 @@ jobs:
       - name: Setup Golang with cache
         uses: magnetikonline/action-golang-cache@v4
         with:
-          go-version-file: go.mod
+          go-version-file: ./server/go.mod
 
       - name: Run golang build
         env:
@@ -26,8 +27,8 @@ jobs:
           GOARCH: amd64
         run: |
           echo "machine github.com login ${{ secrets.GH_USERNAME }} password ${{ secrets.GH_TOKEN }}" > ~/.netrc
-          go build -o seeu .
-          mkdir dist && cp seeu dist
+          go build -o app .
+          mkdir dist && cp app dist
         working-directory: server
 
       - name: Login to DockerHub

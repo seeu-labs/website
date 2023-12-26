@@ -2,8 +2,8 @@ package okx
 
 import "net/http"
 
-type ResultBase[T any] struct {
-	Code string `json:"code"`
+type ResultBase[T any, T2 any] struct {
+	Code T2     `json:"code"`
 	Msg  string `json:"msg"`
 	Data T      `json:"data"`
 }
@@ -28,16 +28,16 @@ type Brc20TokenDetail struct {
 }
 
 // GetBrc20TokenDetail get brc20 token detail
-func (c *Client) GetBrc20TokenDetail(token string) (*ResultBase[[]*Brc20TokenDetail], error) {
-	url := "/api/v5/explorer/btc/token-details?token=" + token
+func (c *MktplaceClient) GetBrc20TokenDetail(token string) (*Brc20TokenDetail, error) {
+	url := "/api/v5/explorer/brc20/token-details?token=" + token
 	req, err := c.CreateRequest(url, http.MethodGet, nil)
 	if err != nil {
 		return nil, err
 	}
-	var res ResultBase[[]*Brc20TokenDetail]
+	var res ResultBase[[]*Brc20TokenDetail, string]
 	err = c.Request(req, &res)
 	if err != nil {
 		return nil, err
 	}
-	return &res, nil
+	return res.Data[0], nil
 }
