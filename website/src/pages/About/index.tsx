@@ -1,4 +1,4 @@
-import seeu from 'assets/images/SeeU.png'
+import seeu from 'assets/images/seeu.png'
 
 const About = () => (
   <div className="fcc-center w-full gap-[36px] overflow-auto px-8 pb-10 text-[16px] md:px-20 md:text-[24px] lg:mt-[60px]">

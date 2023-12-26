@@ -1,4 +1,4 @@
-import { logo2 } from 'assets/images/logo'
+import logo2 from 'assets/images/logo2.png'
 
 const Banner = () => {
   const slogan = 'See U on The Moon'
