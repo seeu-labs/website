@@ -9,7 +9,7 @@ import (
 	"time"
 )
 
-var cache = common.NewObjectCache(10 * time.Minute)
+var cache = common.NewObjectCache(1 * time.Minute)
 
 func createClient() *okx.MktplaceClient {
 	conf := okx.MktplaceClientConfig{}
