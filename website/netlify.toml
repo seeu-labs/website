@@ -1,25 +1,13 @@
 [build.environment]
   NODE_OPTIONS = "--max_old_space_size=4096"
 
+[[plugins]]
+package = "/netlify/plugins/api-proxy"
+
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
-
-[[headers]]
-  for = "/*.html"
-    [headers.values]
-    Content-Type = "text/html"  
-
-[[headers]]
-  for = "/*.css"
-    [headers.values]
-    Content-Type = "text/css"   
-
-[[headers]]
-  for = "/*.js"
-    [headers.values]
-    Content-Type = "text/javascript"  
 
 [[headers]]
   for = "/*"

@@ -11,5 +11,18 @@ export default defineConfig({
     environment: 'happy-dom',
     setupFiles: '.vitest/setup',
     include: ['**/test.{ts,tsx}']
+  },
+  server: {
+    host: '0.0.0.0',
+    cors: true,
+    proxy: {
+      '/api': {
+        target: 'https://seeu.meme',
+        secure: false,
+        ws: true,
+        changeOrigin: true,
+        rewrite: (pathApi) => pathApi
+      }
+    }
   }
 })
