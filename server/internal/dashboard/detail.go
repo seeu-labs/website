@@ -40,7 +40,7 @@ func getOrdinalsInfo(ctx context.Context) *okx_waas.OrdinalsInfo {
 	if _cache.GetFromCache(k, &info) {
 		return &info
 	}
-	oc, err := mc.GetNftOrdinalsCollection("seeu")
+	oc, err := mc.Mktplace().GetNftOrdinalsCollection("seeu")
 	if err != nil {
 		panic(err)
 	}
@@ -54,7 +54,7 @@ func getDetail(ctx context.Context) *okx_waas.Brc20TokenDetail {
 	if _cache.GetFromCache(k, &detail) {
 		return &detail
 	}
-	td, err := mc.GetBrc20TokenDetail("seeu")
+	td, err := mc.Explorer().GetBrc20TokenDetail("seeu")
 	if err != nil {
 		panic(err)
 	}

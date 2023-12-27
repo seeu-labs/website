@@ -2,6 +2,8 @@ package okx_waas
 
 import "net/http"
 
+type Explorer Client
+
 type ResultBase[T any, T2 any] struct {
 	Code T2     `json:"code"`
 	Msg  string `json:"msg"`
@@ -27,15 +29,23 @@ type Brc20TokenDetail struct {
 	Msg               string `json:"msg"`
 }
 
+func (c *Explorer) Client() *Client {
+	return (*Client)(c)
+}
+
+func (c *Client) Explorer() *Explorer {
+	return (*Explorer)(c)
+}
+
 // GetBrc20TokenDetail get brc20 token detail
-func (c *Client) GetBrc20TokenDetail(token string) (*Brc20TokenDetail, error) {
+func (c *Explorer) GetBrc20TokenDetail(token string) (*Brc20TokenDetail, error) {
 	url := "/api/v5/explorer/brc20/token-details?token=" + token
-	req, err := c.CreateRequest(url, http.MethodGet, nil)
+	req, err := c.Client().CreateRequest(url, http.MethodGet, nil)
 	if err != nil {
 		return nil, err
 	}
 	var res ResultBase[[]*Brc20TokenDetail, string]
-	err = c.Request(req, &res)
+	err = c.Client().Request(req, &res)
 	if err != nil {
 		return nil, err
 	}
