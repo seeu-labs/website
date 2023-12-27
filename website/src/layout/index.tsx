@@ -49,7 +49,7 @@ const Layout = () => {
     <div className="flex w-full max-w-[2600px] flex-col lg:h-full lg:flex-row">
       <Banner />
       <div className="flex h-full flex-1 flex-col justify-between">
-        <div className="flex h-[64px] px-20">
+        <div className="flex h-[64px] md:px-20">
           <NavTabs items={items} />
           <div className="hidden items-center gap-4 text-black lg:flex">
             <div
