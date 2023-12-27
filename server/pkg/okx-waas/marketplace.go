@@ -4,7 +4,7 @@ import (
 	"net/http"
 )
 
-type Mktplace Client
+type Marketplace Client
 
 type OrdinalsInfo struct {
 	FloorPrice          string `json:"floorPrice"`
@@ -20,15 +20,15 @@ type OrdinalsCollection struct {
 	Data   []*OrdinalsInfo `json:"data"`
 }
 
-func (c *Client) Mktplace() *Mktplace {
-	return (*Mktplace)(c)
+func (c *Client) Marketplace() *Marketplace {
+	return (*Marketplace)(c)
 }
 
-func (c *Mktplace) Client() *Client {
+func (c *Marketplace) Client() *Client {
 	return (*Client)(c)
 }
 
-func (c *Mktplace) GetNftOrdinalsCollection(slug string) (*OrdinalsCollection, error) {
+func (c *Marketplace) GetNftOrdinalsCollection(slug string) (*OrdinalsCollection, error) {
 	req, err := c.Client().CreateRequest("/api/v5/mktplace/nft/ordinals/collections?slug="+slug, http.MethodGet, nil)
 	if err != nil {
 		return nil, err

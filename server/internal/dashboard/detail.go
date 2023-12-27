@@ -2,11 +2,12 @@ package dashboard
 
 import (
 	"context"
+	"net/http"
+	"time"
+
 	"github.com/gin-gonic/gin"
 	"github.com/seeu-labs/website/server/pkg/cache"
 	"github.com/seeu-labs/website/server/pkg/okx-waas"
-	"net/http"
-	"time"
 )
 
 var _cache = cache.NewObjectCache(1 * time.Minute)
@@ -14,7 +15,7 @@ var _cache = cache.NewObjectCache(1 * time.Minute)
 func createClient() *okx_waas.Client {
 	conf := okx_waas.ClientConfig{}
 	conf.BindEnv()
-	c, err := okx_waas.NewMktplaceClient(conf)
+	c, err := okx_waas.NewMarketplaceClient(conf)
 	if err != nil {
 		panic(err)
 	}
@@ -40,7 +41,7 @@ func getOrdinalsInfo(ctx context.Context) *okx_waas.OrdinalsInfo {
 	if _cache.GetFromCache(k, &info) {
 		return &info
 	}
-	oc, err := mc.Mktplace().GetNftOrdinalsCollection("seeu")
+	oc, err := mc.Marketplace().GetNftOrdinalsCollection("seeu")
 	if err != nil {
 		panic(err)
 	}

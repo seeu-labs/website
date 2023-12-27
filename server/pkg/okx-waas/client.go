@@ -4,12 +4,13 @@ import (
 	"encoding/base64"
 	"encoding/json"
 	"errors"
-	"github.com/seeu-labs/website/server/pkg/httpx"
 	"io"
 	"net/http"
 	"os"
 	"strings"
 	"time"
+
+	"github.com/seeu-labs/website/server/pkg/httpx"
 )
 
 type ClientConfig struct {
@@ -32,7 +33,7 @@ type Client struct {
 	config *ClientConfig
 }
 
-func NewMktplaceClient(config ClientConfig) (*Client, error) {
+func NewMarketplaceClient(config ClientConfig) (*Client, error) {
 	if config.AccessKey == "" {
 		return nil, errors.New("apikey is required")
 	}
