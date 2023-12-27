@@ -24,16 +24,16 @@ const About = () => (
         the inscriptions circle!`}
       </p>
     </div>
-    <div className="fcc-start md:fcs-start mb-[64px] w-full">
+    <div className="fcc-start mb-[64px] w-full md:items-start">
       <div className="fcc-start md:frc-center mb-[40px]">
         <img src={seeu} alt="seeu" className="mb-4 2xl:mr-10" />
         <h2>The first inscription of an old leek!</h2>
       </div>
-      <div className="fcc-start md:frc-center mb-[40px] ml-0 2xl:ml-[30px]">
+      <div className="fcc-start 2xl:frc-center mb-[40px] ml-0 2xl:ml-20">
         <img src={seeu} alt="seeu" className="mb-4 2xl:mr-10" />
         <h2>The first inscription of a young person!</h2>
       </div>
-      <div className="fcc-start md:frc-center mb-[40px] ml-0 2xl:ml-60">
+      <div className="fcc-start 2xl:frc-center mb-[40px] ml-0 2xl:ml-40">
         <img src={seeu} alt="seeu" className="mb-4 2xl:mr-10" />
         <h2>The first inscription of the space stepper!</h2>
       </div>
