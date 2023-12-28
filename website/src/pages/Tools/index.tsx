@@ -9,6 +9,7 @@ import tool7 from 'assets/images/tool7.png'
 export type Tool = {
   id: number
   url: string
+  name: string
   image: string
 }
 
@@ -19,34 +20,40 @@ export const toolsData: {
     {
       id: 1,
       url: 'https://mempool.space/',
-      image: tool1
+      image: tool1,
+      name: 'Mempool'
     },
     {
       id: 2,
       url: 'https://dune.com/cryptokoryo/brc20',
-      image: tool2
+      image: tool2,
+      name: 'Dune'
     },
     {
       id: 3,
       url: 'https://mct.xyz/inscribe/monitor?inscribe_type=brc20-mint&block_type=pending',
-      image: tool3
+      image: tool3,
+      name: 'BTC 铭文监控'
     },
     {
       id: 4,
       url: 'https://ordinals.hiro.so/',
-      image: tool4
+      image: tool4,
+      name: 'Explore Ordinals inscriptions'
     }
   ],
   'Mint Tools': [
     {
       id: 1,
       url: 'https://bitpunks.io/Punk/Insbot',
-      image: tool5
+      image: tool5,
+      name: 'bitPunks Insbot'
     },
     {
       id: 2,
       url: 'https://hub.cryptocell.guru/ordinalsturbo/',
-      image: tool6
+      image: tool6,
+      name: 'Ordinalsturbo'
     }
   ]
 }

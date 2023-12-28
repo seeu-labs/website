@@ -226,9 +226,9 @@ export function Home() {
         </div>
       </div>
       <div className="h-[60px]"></div>
-      {/* Community Co-creation */}
+      {/* Tools */}
       <h1 className="my-[20px] flex items-center justify-between text-[24px] font-[500] leading-[30px]">
-        <div>Community Co-creation</div>
+        <div>Tools</div>
         <div
           onClick={handleNavigate}
           className="cursor-pointer text-lg text-[#63e3ff]"
