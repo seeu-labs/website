@@ -61,8 +61,8 @@ export function Home() {
   return (
     <div className="w-full">
       {/* Introduction */}
-      <div className="flex pt-[80px]">
-        <div className="mr-[102px] flex flex-1 flex-col">
+      <div className="flex pt-[80px] flex-col lg:flex-row flex-wrap">
+        <div className="lg:mr-[100px] mr-0 flex flex-wrap flex-1 flex-col">
           <div className=" flex-1">
             <h1 className="text-[56px] font-[700] leading-[68px]">
               SeeU, The First BRC20 Inscription for the Youth
@@ -81,7 +81,7 @@ export function Home() {
                   '_blank'
                 )
               }}
-              className="h-[40px] w-[180px]"
+              className="h-[40px] w-[160px]"
             >
               OKX maketplace
             </SeeButton>
@@ -92,13 +92,14 @@ export function Home() {
                   '_blank'
                 )
               }}
-              className="ml-4 h-[40px] w-[180px] border-[#63e3ff] text-[#63e3ff] "
+              className="ml-4 h-[40px] w-[160px] border-[#63e3ff] text-[#63e3ff] "
             >
               Unisat maketplace
             </Button>
           </div>
-          <div className="h-[80px]"></div>
-          <div className="flex">
+          <div className="lg:h-[180px] h-[20px]"></div>
+          {/* dashboard */}
+          <div className="flex flex-wrap">
             <DashbooardItem
               value={
                 <>
@@ -129,6 +130,7 @@ export function Home() {
             />
           </div>
         </div>
+        {/* dashboard card */}
         <div
           className="w-[368px]"
           style={{ boxShadow: '0px 40px 160px rgba(255,255,255,0.32)' }}
@@ -183,7 +185,7 @@ export function Home() {
           </div>
         </div>
       </div>
-      <div className="h-[120px]"></div>
+      <div className="h-[60px]"></div>
       {/* Token Details */}
       <h1 className="my-[20px] text-[24px] font-[500] leading-[30px]">
         Token Details
@@ -208,9 +210,7 @@ export function Home() {
         </div>
         <div className="flex flex-wrap">
           <div className="w-[240px]">Inscription ID</div>
-          <div>
-            6e10a5a53028bc945539a5f9a9f18f08141b05ccb6f721bd63386f056b9a5a8fi0
-          </div>
+          <div className="flex flex-wrap">6e10a5a530..6f056b9a5a8fi0</div>
         </div>
         <div className="flex flex-wrap">
           <div className="w-[240px]">Inscription starting no.</div>
@@ -231,7 +231,7 @@ export function Home() {
         <div>Community Co-creation</div>
         <div
           onClick={handleNavigate}
-          className=" mr-[20px] cursor-pointer text-lg text-[#63e3ff]"
+          className="cursor-pointer text-lg text-[#63e3ff]"
         >
           More tools
         </div>
