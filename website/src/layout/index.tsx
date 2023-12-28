@@ -1,5 +1,4 @@
 import Button, { ButtonProps } from 'antd/es/button'
-import logo160 from 'assets/images/logo-160.png'
 import { SoialPanel } from 'components/SocailPanel'
 import { Outlet, useNavigate } from 'react-router-dom'
 import Footer from './footer'
@@ -25,14 +24,19 @@ export function SeeButton(props: ButtonProps) {
 export const Header = () => {
   const n = useNavigate()
   return (
-    <div className="flex items-center pt-[48px] text-2xl font-[600]">
+    <div className="flex items-center pt-[48px] text-3xl font-[700]">
       <div
         onClick={() => {
           n('/')
         }}
-        className="flex cursor-pointer items-center gap-2"
+        className="flex cursor-pointer items-center gap-4"
       >
-        <img src={logo160} width={76} alt="logo" />
+        <img
+          src="/favicon.ico"
+          className="rounded-full"
+          width={52}
+          alt="logo"
+        />
         SeeU
       </div>
       <div className="flex-1"> </div>
