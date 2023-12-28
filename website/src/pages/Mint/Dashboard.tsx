@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import bitcoin from 'assets/images/bitcoin.png'
 
 export function BitcoinIcon() {
-  return <img className="mx-2 w-[28px]" src={bitcoin} alt="bitcoin" />
+  return <img className="mr-2 w-[28px]" src={bitcoin} alt="bitcoin" />
 }
 
 function DashbooardItem(props: {

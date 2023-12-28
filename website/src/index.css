@@ -51,8 +51,9 @@
 
 html,
 body {
-  font-family: Misans, sans-serif;
+  /* font-family: Misans, sans-serif; */
   letter-spacing: 0.02em;
+  background-color: #111;
 }
 
 #root {
