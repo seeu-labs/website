@@ -1,5 +1,5 @@
 import Button from 'antd/es/button'
-import logo from 'assets/images/logo-640.png'
+import logo from 'assets/images/logo.jpg'
 import { SeeButton } from 'layout'
 import demoImage from 'assets/images/1.jpg'
 import Image from 'antd/es/image'
@@ -61,8 +61,8 @@ export function Home() {
   return (
     <div className="w-full">
       {/* Introduction */}
-      <div className="flex pt-[80px] flex-col lg:flex-row flex-wrap">
-        <div className="lg:mr-[100px] mr-0 flex flex-wrap flex-1 flex-col">
+      <div className="flex flex-col flex-wrap pt-[80px] lg:flex-row">
+        <div className="mr-0 flex flex-1 flex-col flex-wrap lg:mr-[100px]">
           <div className=" flex-1">
             <h1 className="text-[56px] font-[700] leading-[68px]">
               SeeU, The First BRC20 Inscription for the Youth
@@ -97,7 +97,7 @@ export function Home() {
               Unisat maketplace
             </Button>
           </div>
-          <div className="lg:h-[180px] h-[20px]"></div>
+          <div className="h-[20px] lg:h-[180px]"></div>
           {/* dashboard */}
           <div className="flex flex-wrap">
             <DashbooardItem
@@ -132,17 +132,17 @@ export function Home() {
         </div>
         {/* dashboard card */}
         <div
-          className="w-[368px]"
+          className="bg-logo h-[max-content] w-[480px] overflow-hidden rounded-[10px]"
           style={{ boxShadow: '0px 40px 160px rgba(255,255,255,0.32)' }}
         >
-          <div className="w-full px-[62px] py-[92px]">
-            <img src={logo} width={244} alt="logo" />
+          <div className={`h-[500px] w-full`}>
+            <img src={logo} className="h-full w-full object-cover" alt="logo" />
           </div>
           <div className="w-full bg-white p-[24px] text-black">
             <div className="flex gap-4">
               <div className="flex-1">
-                <div className="text-[14px]">Market cap</div>
-                <div className="flex items-center pt-[10px] text-[16px] font-[700]">
+                <div className="text-[20px]">Market cap</div>
+                <div className="flex items-center pt-[10px] text-[22px] font-[700]">
                   <BitcoinIcon />
                   {data
                     ? (
@@ -153,8 +153,8 @@ export function Home() {
                 </div>
               </div>
               <div className="flex flex-1 flex-col">
-                <div className="text-[14px]">Floor Price</div>
-                <div className="flex flex-1 items-center pt-[10px] text-[16px] font-[700]">
+                <div className="text-[20px]">Floor Price</div>
+                <div className="flex flex-1 items-center pt-[10px] text-[22px] font-[700]">
                   {(data
                     ? (
                         Number.parseFloat(data.marketplace.floorPrice) *
