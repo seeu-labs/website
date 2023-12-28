@@ -52,7 +52,7 @@ export const Content = () => {
 
 const Layout = () => {
   return (
-    <div className="m-auto w-full max-w-[1440px] px-[20px] text-[#f8f8f8] lg:px-[100px]">
+    <div className="m-auto w-full max-w-[1440px] px-[10px] text-[#f8f8f8] lg:px-[100px]">
       <Header />
       <Content />
       <Footer />

@@ -1,8 +1,8 @@
 const Footer = () => {
   return (
-    <div className="mt-[40px] flex h-[87px] items-center border-t-[1px] border-[#383838]">
-      <div className="text-[26px] font-[700]">SeeU</div>
-      <div className="flex flex-1 gap-[60px] px-[60px] text-[18px]">
+    <div className="mt-[40px] flex h-[87px] flex-wrap  items-center gap-[10px] border-t-[1px] border-[#383838] p-[10px]">
+      <div className="pr-[60px] text-[26px]  font-[700]">SeeU</div>
+      <div className="flex flex-1 gap-[18px] text-[18px] lg:gap-[60px]">
         <span
           onClick={() => {
             window.open('https://twitter.com/seeu_brc20', '_blank')
@@ -30,14 +30,14 @@ const Footer = () => {
         >
           Notion
         </span>
-        <span
+        {/* <span
           onClick={() => {
             window.open('https://seeuclub.xyz', '_blank')
           }}
           className="cursor-pointer"
         >
           Club
-        </span>
+        </span> */}
         <span
           onClick={() => {
             window.open('https://github.com/seeu-labs', '_blank')
