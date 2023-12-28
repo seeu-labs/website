@@ -14,7 +14,7 @@ export function ToolItem(props: { value: Tool; group: string }) {
         className="h-full w-full flex-1 object-cover"
       />
       <div className="flex items-center justify-between p-[16px]">
-        <div>{props.value.url}</div>
+        <div>{props.value.name}</div>
         {/* <Tag
           className="px-[8px] py-[4px] text-sm"
           color={colors[Math.floor(Math.random() * colors.length)]}
