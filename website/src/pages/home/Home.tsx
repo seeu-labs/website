@@ -50,7 +50,7 @@ export function Home() {
   const navigate = useNavigate()
 
   const handleNavigate = () => {
-    navigate('/marketplace')
+    navigate('/tools')
   }
   useEffect(() => {
     api.brc20.getSeeUDetails().then((res) => {
