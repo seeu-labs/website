@@ -1,7 +1,7 @@
 import Button from 'antd/es/button'
-import logo from 'assets/images/logo.jpg'
+import logo from 'assets/images/logo.png'
 import { SeeButton } from 'layout'
-import demoImage from 'assets/images/1.jpg'
+import demoImage from 'assets/images/logo.png'
 import Image from 'antd/es/image'
 import { useEffect, useState } from 'react'
 import api, { SeeUDetail } from 'api'
@@ -132,11 +132,11 @@ export function Home() {
         </div>
         {/* dashboard card */}
         <div
-          className="bg-logo h-[max-content] w-[480px] overflow-hidden rounded-[10px]"
+          className="m-auto h-[max-content] w-[368px]"
           style={{ boxShadow: '0px 40px 160px rgba(255,255,255,0.32)' }}
         >
-          <div className={`h-[500px] w-full`}>
-            <img src={logo} className="h-full w-full object-cover" alt="logo" />
+          <div className="w-full px-[62px] py-[92px]">
+            <img src={logo} width={244} alt="logo" />
           </div>
           <div className="w-full bg-white p-[24px] text-black">
             <div className="flex gap-4">
