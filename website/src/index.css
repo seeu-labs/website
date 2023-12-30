@@ -53,7 +53,7 @@
   display: block;
   content: '';
   position: absolute;
-  background-image: url('assets/images/logo.jpg');
+  background-image: url('assets/images/logo.png');
   filter: blur(40px);
   background-size: cover;
   background-position: center;
