@@ -40,7 +40,7 @@ export function TelegramList() {
     if (tc.current) {
       const script = document.createElement('script')
       script.src = 'https://telegram.org/js/telegram-widget.js?22'
-      script.setAttribute('data-telegram-discussion', 'seeubtc/1')
+      script.setAttribute('data-telegram-discussion', 'seeubtc/2236')
       script.setAttribute('data-comments-limit', '20')
       script.setAttribute('data-dark', '1')
       script.setAttribute('data-height', '1000')
@@ -54,7 +54,7 @@ export function TelegramList() {
         Telegram
       </h1>
       <div ref={tc} className="">
-        <a href="https://t.me/seeubtc/1"></a>
+        <a href="https://t.me/seeubtc/2236"></a>
       </div>
     </div>
   )
