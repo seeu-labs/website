@@ -16,7 +16,7 @@ export function TwitterList() {
   return (
     <div>
       <h1 className="my-[20px] flex items-center justify-between text-[24px] font-[500] leading-[30px]">
-        Community-Twitter
+        Twitter
       </h1>
       <div ref={xc} className="">
         <a
@@ -51,7 +51,7 @@ export function TelegramList() {
   return (
     <div>
       <h1 className="my-[20px] flex items-center justify-between text-[24px] font-[500] leading-[30px]">
-        Community-Telegram
+        Telegram
       </h1>
       <div ref={tc} className="">
         <a href="https://t.me/seeubtc/1"></a>
