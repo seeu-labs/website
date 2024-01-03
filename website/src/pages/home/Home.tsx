@@ -86,7 +86,7 @@ export function Home() {
             >
               OKX maketplace
             </SeeButton>
-            <Button
+            {/* <Button
               onClick={() => {
                 window.open(
                   'https://unisat.io/market/brc20?tick=SeeU',
@@ -96,6 +96,14 @@ export function Home() {
               className="ml-4 h-[40px] w-[160px] border-[#63e3ff] text-[#63e3ff] "
             >
               Unisat maketplace
+            </Button> */}
+            <Button
+              onClick={() => {
+                window.open('https://poloniex.com/trade/SEEU_USDT', '_blank')
+              }}
+              className="ml-4 h-[40px] w-[180px] border-[#63e3ff] text-[#63e3ff] hover:bg-[#63e3ff] hover:text-white"
+            >
+              SeeU/USDT(Poloniex)
             </Button>
           </div>
           <div className="h-[20px] lg:h-[180px]"></div>
