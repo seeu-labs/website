@@ -10,7 +10,7 @@ import Progress from 'antd/es/progress'
 import { ToolItem } from 'pages/Tools/ToolItem'
 import { toolsData } from 'pages/Tools'
 import { useNavigate } from 'react-router-dom'
-import { TwitterList } from './Community'
+import { TelegramList, TwitterList } from './Community'
 
 function DashbooardItem(props: {
   value: string | React.ReactNode
@@ -236,8 +236,8 @@ export function Home() {
       </div>
       <div className="h-[60px]"></div>
       <TwitterList />
-      {/* <div className="h-[60px]"></div> */}
-      {/* <TelegramList /> */}
+      <div className="h-[60px]"></div>
+      <TelegramList />
       <div className="h-[60px]"></div>
       {/* Tools */}
       <h1 className="my-[20px] flex items-center justify-between text-[24px] font-[500] leading-[30px]">
