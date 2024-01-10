@@ -18,7 +18,7 @@ export function TwitterList() {
       <h1 className="my-[20px] flex items-center justify-between text-[24px] font-[500] leading-[30px]">
         Twitter
       </h1>
-      <div ref={xc} className="">
+      <div ref={xc} className="max-w-[700px]">
         <a
           className="twitter-timeline"
           data-lang="zh-cn"
@@ -40,7 +40,7 @@ export function TelegramList() {
     if (tc.current) {
       const script = document.createElement('script')
       script.src = 'https://telegram.org/js/telegram-widget.js?22'
-      script.setAttribute('data-telegram-discussion', 'seeubtc/2236')
+      script.setAttribute('data-telegram-discussion', 'seeubtc')
       script.setAttribute('data-comments-limit', '20')
       script.setAttribute('data-dark', '1')
       script.setAttribute('data-height', '1000')
@@ -54,7 +54,7 @@ export function TelegramList() {
         Telegram
       </h1>
       <div ref={tc} className="">
-        <a href="https://t.me/seeubtc/2236"></a>
+        <a href="https://t.me/seeubtc"></a>
       </div>
     </div>
   )
