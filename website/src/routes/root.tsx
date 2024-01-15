@@ -1,8 +1,9 @@
-import Layout from 'layout'
+import Layout from 'layout/index'
 import About from 'pages/About'
 import Marketplace from 'pages/Marketplace'
 import Mint from 'pages/Mint'
 import Tools from 'pages/Tools'
+import { Home } from 'pages/home/Home'
 import {
   Navigate,
   Route,
@@ -15,7 +16,7 @@ function Root() {
   return (
     <Routes>
       <Route element={<Layout />}>
-        <Route path="" element={<Navigate to="/mint" />} />
+        <Route path="" element={<Home />} />
         <Route path="about" element={<About />} />
         <Route path="mint" element={<Mint />} />
         <Route path="marketplace" element={<Marketplace />} />

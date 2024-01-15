@@ -49,10 +49,22 @@
   -webkit-line-clamp: 3;
 }
 
+.bg-logo::before {
+  display: block;
+  content: '';
+  position: absolute;
+  background-image: url('assets/images/logo.png');
+  filter: blur(40px);
+  background-size: cover;
+  background-position: center;
+  background-color: transparent;
+}
+
 html,
 body {
-  font-family: Misans, sans-serif;
+  /* font-family: Misans, sans-serif; */
   letter-spacing: 0.02em;
+  background-color: #111;
 }
 
 #root {
