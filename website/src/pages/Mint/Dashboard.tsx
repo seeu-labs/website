@@ -43,7 +43,7 @@ export function Dashbooard() {
         }
       />
       <DashbooardItem
-        label="24h Volum"
+        label="24h Volume"
         value={
           <>
             <BitcoinIcon />
@@ -71,7 +71,7 @@ export function Dashbooard() {
           ) + ' sats'
         }
       />
-      <DashbooardItem value={data.detail.holder} label="Hodlers" />
+      <DashbooardItem value={data.detail.holder} label="Holders" />
     </div>
   ) : null
 }

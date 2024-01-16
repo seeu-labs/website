@@ -130,12 +130,12 @@ export function Home() {
                     : 0}
                 </>
               }
-              label="24h Volum"
+              label="24h Volume"
             />
             <div className="mx-[26px] h-full border-r-[1px] border-[#9b9b9b]"></div>
             <DashbooardItem
               value={data ? data.detail.holder : 0}
-              label="Hodlers"
+              label="Holders"
             />
           </div>
         </div>
