@@ -14,20 +14,22 @@ export function TwitterList() {
   }, [])
 
   return (
-    <div>
-      <h1 className="my-[20px] flex items-center justify-between text-[24px] font-[500] leading-[30px]">
+    <div className="flex-1">
+      <h1 className="mb-[20px] flex items-center justify-between text-[24px] font-[500] leading-[30px]">
         Twitter
       </h1>
-      <div ref={xc} className="max-w-[700px]">
-        <a
-          className="twitter-timeline"
-          data-lang="zh-cn"
-          data-height="1000"
-          data-theme="dark"
-          href="https://twitter.com/seeu_brc20?ref_src=twsrc%5Etfw"
-        >
-          Loading Tweets...
-        </a>
+      <div className="frc-center border-gray-100 bg-[#1d1e1f]">
+        <div ref={xc} className="w-full max-w-[1280px]">
+          <a
+            className="twitter-timeline"
+            data-lang="zh-cn"
+            data-height="1000"
+            data-theme="dark"
+            href="https://twitter.com/seeu_brc20?ref_src=twsrc%5Etfw"
+          >
+            Loading Tweets...
+          </a>
+        </div>
       </div>
     </div>
   )

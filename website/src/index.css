@@ -71,3 +71,19 @@ body {
   width: 100%;
   height: 100%;
 }
+
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.1);
+  background-color: #1a253b;
+  border-radius: 6px;
+}
+::-webkit-scrollbar {
+  width: 4px;
+  background-color: #1a253b;
+}
+::-webkit-scrollbar-thumb {
+  cursor: pointer;
+  border-radius: 6px;
+  background-color: #0048ff;
+}

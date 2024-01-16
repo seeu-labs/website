@@ -1,8 +1,4 @@
 import Layout from 'layout/index'
-import About from 'pages/About'
-import Marketplace from 'pages/Marketplace'
-import Mint from 'pages/Mint'
-import Tools from 'pages/Tools'
 import { Home } from 'pages/home/Home'
 import {
   Navigate,
@@ -17,14 +13,8 @@ function Root() {
     <Routes>
       <Route element={<Layout />}>
         <Route path="" element={<Home />} />
-        <Route path="about" element={<About />} />
-        <Route path="mint" element={<Mint />} />
-        <Route path="marketplace" element={<Marketplace />} />
-        <Route path="tools" element={<Tools />} />
-        {/* <Route path="learn" element={<Learn />} /> */}
-        {/* <Route path="404" element={<NotFound />} /> */}
       </Route>
-      <Route path="*" element={<Navigate to="/mint" />} />
+      <Route path="*" element={<Navigate to="/Home" />} />
     </Routes>
   )
 }
