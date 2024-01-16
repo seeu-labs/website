@@ -11,19 +11,18 @@ import { ToolItem } from 'pages/Tools/ToolItem'
 import { toolsData } from 'pages/Tools'
 import { useNavigate } from 'react-router-dom'
 import { TwitterList } from './Community'
+import Roadmap from 'pages/Roadmap'
 
 function DashbooardItem(props: {
   value: string | React.ReactNode
   label: string
 }) {
   return (
-    <div className="rounded-xl p-4">
+    <div className="min-w-[120px] rounded-xl p-4">
       <div className="flex items-center text-[32px] font-extrabold">
         {props.value}
       </div>
-      <div className="ml-[6px] mt-[8px] text-[16px] text-[#e4e4e4]">
-        {props.label}
-      </div>
+      <div className="text-[16px] text-[#e4e4e4]">{props.label}</div>
     </div>
   )
 }
@@ -64,8 +63,8 @@ export function Home() {
       {/* Introduction */}
       <div className="flex flex-col flex-wrap pt-[80px] lg:flex-row">
         <div className="mr-0 flex flex-1 flex-col flex-wrap lg:mr-[100px]">
-          <div className=" flex-1">
-            <h1 className="text-[56px] font-[700] leading-[68px]">
+          <div className="px-10 md:flex-1">
+            <h1 className="break-words text-[48px] font-[700] leading-[68px] md:text-[56px]">
               SeeU, The First BRC20 Inscription for the Youth
             </h1>
             <p className="text-[20px] leading-[26px]">
@@ -74,7 +73,7 @@ export function Home() {
               thousandfold coin.
             </p>
           </div>
-          <div>
+          <div className="flex flex-wrap justify-start gap-8 px-10">
             <SeeButton
               onClick={() => {
                 window.open(
@@ -82,33 +81,33 @@ export function Home() {
                   '_blank'
                 )
               }}
-              className="h-[40px] w-[160px]"
+              className="h-[44px] w-[160px] md:mx-[unset]"
             >
               OKX maketplace
             </SeeButton>
-            {/* <Button
+            <Button
               onClick={() => {
                 window.open(
                   'https://unisat.io/market/brc20?tick=SeeU',
                   '_blank'
                 )
               }}
-              className="ml-4 h-[40px] w-[160px] border-[#63e3ff] text-[#63e3ff] "
+              className="h-[44px] w-[160px] border-[#63e3ff] text-[#63e3ff] hover:bg-[#63e3ff] hover:text-white md:mx-[unset]"
             >
               Unisat maketplace
-            </Button> */}
+            </Button>
             <Button
               onClick={() => {
                 window.open('https://poloniex.com/trade/SEEU_USDT', '_blank')
               }}
-              className="ml-4 h-[40px] w-[180px] border-[#63e3ff] text-[#63e3ff] hover:bg-[#63e3ff] hover:text-white"
+              className="h-[44px] w-[160px] border-[#63e3ff] text-[#63e3ff] hover:bg-[#63e3ff] hover:text-white md:mx-[unset]"
             >
               SeeU/USDT(Poloniex)
             </Button>
           </div>
           <div className="h-[20px] lg:h-[180px]"></div>
           {/* dashboard */}
-          <div className="flex flex-wrap">
+          <div className="flex flex-wrap items-center justify-start px-10">
             <DashbooardItem
               value={
                 <>
@@ -120,7 +119,7 @@ export function Home() {
               }
               label="Total volume"
             />
-            <div className="mx-[26px] h-full border-r-[1px] border-[#9b9b9b]"></div>
+            <div className="mx-[10px] h-full border-r-[1px] border-[#9b9b9b] md:mx-[26px]"></div>
             <DashbooardItem
               value={
                 <>
@@ -132,7 +131,7 @@ export function Home() {
               }
               label="24h Volume"
             />
-            <div className="mx-[26px] h-full border-r-[1px] border-[#9b9b9b]"></div>
+            <div className="mx-[10px] h-full border-r-[1px] border-[#9b9b9b] md:mx-[26px]"></div>
             <DashbooardItem
               value={data ? data.detail.holder : 0}
               label="Holders"
@@ -196,7 +195,7 @@ export function Home() {
       </div>
       <div className="h-[60px]"></div>
       {/* Token Details */}
-      <h1 className="my-[20px] text-[24px] font-[500] leading-[30px]">
+      <h1 className="mb-[20px] text-[24px] font-[500] leading-[30px]">
         Token Details
       </h1>
       <div className="flex flex-col gap-2 px-[20px] text-lg text-[#aaa]">
@@ -235,28 +234,36 @@ export function Home() {
         </div>
       </div>
       <div className="h-[60px]"></div>
+      {/* Roadmap */}
+      <h1 className="mb-[20px] text-[24px] font-[500] leading-[30px]">
+        Community-based BTC Layer2 Future
+      </h1>
+      <Roadmap />
+      <div className="h-[60px]"></div>
+      <div>
+        <h1 className="my-[20px] flex items-center justify-between text-[24px] font-[500] leading-[30px]">
+          <div>Tools</div>
+          <div
+            onClick={handleNavigate}
+            className="cursor-pointer text-lg text-[#63e3ff]"
+          >
+            More tools
+          </div>
+        </h1>
+        <div className="grid grid-cols-1 gap-[24px] md:grid-cols-2">
+          {Object.keys(toolsData)
+            .flatMap((t) => toolsData[t].map((tool) => ({ ...tool, group: t })))
+            .slice(0, 4)
+            .map((tool) => (
+              <ToolItem value={tool} key={tool.id} group={tool.group} />
+            ))}
+        </div>
+      </div>
+      <div className="h-[60px]"></div>
       <TwitterList />
       <div className="h-[60px]"></div>
       {/* <TelegramList />
       <div className="h-[60px]"></div> */}
-      {/* Tools */}
-      <h1 className="my-[20px] flex items-center justify-between text-[24px] font-[500] leading-[30px]">
-        <div>Tools</div>
-        <div
-          onClick={handleNavigate}
-          className="cursor-pointer text-lg text-[#63e3ff]"
-        >
-          More tools
-        </div>
-      </h1>
-      <div className="grid grid-cols-2 gap-[24px]">
-        {Object.keys(toolsData)
-          .flatMap((t) => toolsData[t].map((tool) => ({ ...tool, group: t })))
-          .slice(0, 4)
-          .map((tool) => (
-            <ToolItem value={tool} key={tool.id} group={tool.group} />
-          ))}
-      </div>
     </div>
   )
 }
