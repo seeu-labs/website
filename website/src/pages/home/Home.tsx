@@ -246,7 +246,7 @@ export function Home() {
       </h1>
       <Roadmap />
       <div className="h-[30px]"></div>
-      <div>
+      {/* <div>
         <h1 className="my-[20px] flex items-center justify-between text-[24px] font-[500] leading-[30px]">
           <div>Tools</div>
           <div
@@ -265,7 +265,7 @@ export function Home() {
             ))}
         </div>
       </div>
-      <div className="h-[60px]"></div>
+      <div className="h-[60px]"></div> */}
       <TwitterList />
       <div className="h-[60px]"></div>
       {/* <TelegramList />
