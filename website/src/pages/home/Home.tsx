@@ -18,7 +18,7 @@ function DashbooardItem(props: {
   label: string
 }) {
   return (
-    <div className="min-w-[120px] rounded-xl p-4">
+    <div className="min-w-[120px] rounded-xl py-4">
       <div className="flex items-center text-[32px] font-extrabold">
         {props.value}
       </div>
@@ -63,7 +63,7 @@ export function Home() {
       {/* Introduction */}
       <div className="flex flex-col flex-wrap pt-[80px] lg:flex-row">
         <div className="mr-0 flex flex-1 flex-col flex-wrap lg:mr-[100px]">
-          <div className="px-10 md:flex-1">
+          <div className="md:flex-1">
             <h1 className="break-words text-[48px] font-[700] leading-[68px] md:text-[56px]">
               SeeU, The First BRC20 Inscription for the Youth
             </h1>
@@ -73,7 +73,7 @@ export function Home() {
               thousandfold coin.
             </p>
           </div>
-          <div className="flex flex-wrap justify-start gap-8 px-10">
+          <div className="flex flex-wrap justify-start gap-8">
             <SeeButton
               onClick={() => {
                 window.open(
@@ -100,14 +100,14 @@ export function Home() {
               onClick={() => {
                 window.open('https://poloniex.com/trade/SEEU_USDT', '_blank')
               }}
-              className="h-[44px] w-[160px] border-[#63e3ff] text-[#63e3ff] hover:bg-[#63e3ff] hover:text-white md:mx-[unset]"
+              className="h-[44px] w-[160px] md:w-auto border-[#63e3ff] text-[#63e3ff] hover:bg-[#63e3ff] hover:text-white md:mx-[unset]"
             >
               SeeU/USDT(Poloniex)
             </Button>
           </div>
           <div className="h-[20px] lg:h-[180px]"></div>
           {/* dashboard */}
-          <div className="flex flex-wrap items-center justify-start px-10">
+          <div className="flex flex-wrap items-center justify-start gap-4">
             <DashbooardItem
               value={
                 <>
@@ -198,7 +198,7 @@ export function Home() {
       <h1 className="mb-[20px] text-[24px] font-[500] leading-[30px]">
         Token Details
       </h1>
-      <div className="flex flex-col gap-2 px-[20px] text-lg text-[#aaa]">
+      <div className="flex flex-col gap-2 text-lg text-[#aaa]">
         <div className="flex justify-between text-sm text-[#aaa]">
           <div>Minted: 21,000,000,000</div>
           <div>Supply: 21,000,000,000</div>
@@ -208,29 +208,35 @@ export function Home() {
           showInfo={false}
           strokeColor={{ '0%': '#63e3ff', '100%': '#87d068' }}
         />
-        <div className="flex flex-wrap">
-          <div className="w-[240px]">Total supply</div>
-          <div>21,000,000,000</div>
-        </div>
-        <div className="flex flex-wrap">
-          <div className="w-[240px]">Deployed</div>
-          <div>12/21/2023, 13:26:30</div>
-        </div>
-        <div className="flex flex-wrap">
-          <div className="w-[240px]">Inscription ID</div>
-          <div className="flex flex-wrap">6e10a5a530..6f056b9a5a8fi0</div>
-        </div>
-        <div className="flex flex-wrap">
-          <div className="w-[240px]">Inscription starting no.</div>
-          <div>#49925873</div>
-        </div>
-        <div className="flex flex-wrap">
-          <div className="w-[240px]">Inscription ending no.</div>
-          <div>#50070419</div>
-        </div>
-        <div className="flex flex-wrap">
-          <div className="w-[240px]">Limit per mint</div>
-          <div>1,000,000</div>
+        <div className="flex items-between justify-start">
+          <div className="flex-1">
+            <div className="flex flex-wrap">
+              <div className="w-[180px]">Total supply</div>
+              <div>21,000,000,000</div>
+            </div>
+            <div className="flex flex-wrap">
+              <div className="w-[180px]">Deployed</div>
+              <div>12/21/2023, 13:26:30</div>
+            </div>
+            <div className="flex flex-wrap">
+              <div className="w-[180px]">Inscription ID</div>
+              <div className="flex flex-wrap">6e10a5a530..6f056b9a5a8fi0</div>
+            </div>
+          </div>
+          <div>
+            <div className="flex flex-wrap">
+              <div className="w-[240px]">Inscription starting no.</div>
+              <div>#49925873</div>
+            </div>
+            <div className="flex flex-wrap">
+              <div className="w-[240px]">Inscription ending no.</div>
+              <div>#50070419</div>
+            </div>
+            <div className="flex flex-wrap">
+              <div className="w-[240px]">Limit per mint</div>
+              <div>1,000,000</div>
+            </div>
+          </div>
         </div>
       </div>
       <div className="h-[60px]"></div>
@@ -239,7 +245,7 @@ export function Home() {
         Community-based BTC Layer2 Future
       </h1>
       <Roadmap />
-      <div className="h-[60px]"></div>
+      <div className="h-[30px]"></div>
       <div>
         <h1 className="my-[20px] flex items-center justify-between text-[24px] font-[500] leading-[30px]">
           <div>Tools</div>

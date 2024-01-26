@@ -1,9 +1,8 @@
 import './index.css'
 
 const Roadmap = () => (
-  <div className="roadmap grid grid-cols-1 items-center justify-center gap-4 lg:grid-cols-2 xl:grid-cols-3">
-    <div className="col-span-1">
-      <h1 className="mb-10 h-[48px] w-[360px]">What</h1>
+  <div className="roadmap grid grid-cols-1 items-center justify-center gap-10 lg:grid-cols-2 xl:grid-cols-3">
+    <div className="col-span-1 mt-12">
       <div className="content">
         <p className="leading-[1.25rem]">
           SeeU is the leading meme coin of the Chinese DAO, which can drive the
@@ -19,9 +18,9 @@ const Roadmap = () => (
           thousandfold coin for the new generation.
         </p>
       </div>
+      <h1 className="mt-4 h-[48px] w-[360px]">What</h1>
     </div>
-    <div className="col-span-1">
-      <h1 className="mb-10 h-[48px] w-[360px]">Why</h1>
+    <div className="col-span-1 mt-12">
       <div className="content">
         <p>
           If we understand that success in all Layer N projects depends on
@@ -39,9 +38,9 @@ const Roadmap = () => (
           </li>
         </ol>
       </div>
+      <h1 className="mt-4 h-[48px] w-[360px]">Why</h1>
     </div>
-    <div className="col-span-1">
-      <h1 className="mb-10 h-[48px] w-[360px]">How</h1>
+    <div className="col-span-1 mt-12">
       <div className="content">
         <ol className="mb-0">
           <li className="mb-[10px]">
@@ -64,6 +63,7 @@ const Roadmap = () => (
           </li>
         </ol>
       </div>
+      <h1 className="mt-4 h-[48px] w-[360px]">How</h1>
     </div>
   </div>
 )
