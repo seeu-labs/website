@@ -61,7 +61,7 @@ export function Home() {
   return (
     <div className="w-full">
       {/* Introduction */}
-      <div className="flex flex-col flex-wrap pt-[80px] px-10 lg:flex-row">
+      <div className="flex flex-col flex-wrap pt-[80px] lg:flex-row">
         <div className="mr-0 flex flex-1 flex-col flex-wrap lg:mr-[100px]">
           <div className="md:flex-1">
             <h1 className="break-words text-[48px] font-[700] leading-[68px] md:text-[56px]">
@@ -198,7 +198,7 @@ export function Home() {
       <h1 className="mb-[20px] text-[24px] font-[500] leading-[30px]">
         Token Details
       </h1>
-      <div className="flex flex-col gap-2 px-10 text-lg text-[#aaa]">
+      <div className="flex flex-col gap-2 text-lg text-[#aaa]">
         <div className="flex justify-between text-sm text-[#aaa]">
           <div>Minted: 21,000,000,000</div>
           <div>Supply: 21,000,000,000</div>
@@ -245,7 +245,7 @@ export function Home() {
         Community-based BTC Layer2 Future
       </h1>
       <Roadmap />
-      <div className="h-[60px]"></div>
+      <div className="h-[30px]"></div>
       <div>
         <h1 className="my-[20px] flex items-center justify-between text-[24px] font-[500] leading-[30px]">
           <div>Tools</div>
