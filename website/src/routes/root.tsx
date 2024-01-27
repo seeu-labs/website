@@ -1,5 +1,5 @@
 import Layout from 'layout/index'
-import { Home } from 'pages/home/Home'
+import { Home } from 'pages/HomePage'
 import {
   Navigate,
   Route,

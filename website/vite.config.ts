@@ -22,6 +22,13 @@ export default defineConfig({
         ws: true,
         changeOrigin: true,
         rewrite: (pathApi) => pathApi
+      },
+      '/merlinapi': {
+        target: 'http://dapp.merlinprotocol.org',
+        secure: false,
+        ws: true,
+        changeOrigin: true,
+        rewrite: (pathApi) => pathApi
       }
     }
   }

@@ -1,5 +1,10 @@
-import { Client } from './client'
+import seeu from './seeu'
+import merlin from './merlin'
 
-export * from './brc20'
-export * from './client'
-export default new Client()
+export * as seeu from './seeu'
+export * as merlin from './merlin'
+
+export default {
+  seeu,
+  merlin
+}

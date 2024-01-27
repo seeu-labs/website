@@ -5,6 +5,12 @@
 package = "/netlify/plugins/api-proxy"
 
 [[redirects]]
+  from = "/merlinapi/*"
+  to = "http://dapp.merlinprotocol.org/:splat"
+  status = 200
+  force = true
+
+[[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200

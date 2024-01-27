@@ -4,14 +4,16 @@ import { SeeButton } from 'layout'
 import demoImage from 'assets/images/logo.png'
 import Image from 'antd/es/image'
 import { useEffect, useState } from 'react'
-import api, { SeeUDetail } from 'api'
+import api from 'api'
+import type { SeeUDetail } from 'api/seeu'
 import { BitcoinIcon } from 'pages/Mint/Dashboard'
 import Progress from 'antd/es/progress'
-import { ToolItem } from 'pages/Tools/ToolItem'
-import { toolsData } from 'pages/Tools'
-import { useNavigate } from 'react-router-dom'
-import { TwitterList } from './Community'
-import Roadmap from 'pages/Roadmap'
+// import { ToolItem } from 'pages/Tools/ToolItem'
+// import { toolsData } from 'pages/Tools'
+// import { useNavigate } from 'react-router-dom'
+import { TwitterList } from './modules/Community'
+import Roadmap from './modules/Roadmap'
+import Transactions from './modules/Transactions'
 
 function DashbooardItem(props: {
   value: string | React.ReactNode
@@ -47,13 +49,13 @@ export function CreationItem() {
 
 export function Home() {
   const [data, setData] = useState<SeeUDetail>()
-  const navigate = useNavigate()
+  // const navigate = useNavigate()
 
-  const handleNavigate = () => {
-    navigate('/tools')
-  }
+  // const handleNavigate = () => {
+  //   navigate('/tools')
+  // }
   useEffect(() => {
-    api.brc20.getSeeUDetails().then((res) => {
+    api.seeu.brc20.getSeeUDetails().then((res) => {
       console.log(res)
       setData(res)
     })
@@ -240,6 +242,12 @@ export function Home() {
         </div>
       </div>
       <div className="h-[60px]"></div>
+      {/* Charts from Merlin API */}
+      <h1 className="mb-[20px] text-[24px] font-[500] leading-[30px]">
+        Transactions (Supported by Merlin Protocol)
+      </h1>
+      <Transactions />
+      <div className="h-[30px]"></div>
       {/* Roadmap */}
       <h1 className="mb-[20px] text-[24px] font-[500] leading-[30px]">
         Community-based BTC Layer2 Future

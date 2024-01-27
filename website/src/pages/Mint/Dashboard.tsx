@@ -1,4 +1,5 @@
-import api, { SeeUDetail } from 'api'
+import api from 'api'
+import type { SeeUDetail } from 'api/seeu'
 import React, { useEffect, useState } from 'react'
 import bitcoin from 'assets/images/bitcoin.png'
 
@@ -26,7 +27,7 @@ export function Dashbooard() {
   const [data, setData] = useState<SeeUDetail>()
 
   useEffect(() => {
-    api.brc20.getSeeUDetails().then((res) => {
+    api.seeu.brc20.getSeeUDetails().then((res) => {
       console.log(res)
       setData(res)
     })
